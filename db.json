@@ -3,22 +3,26 @@
         {
             "id": "1",
             "name": "George",
-            "age" : 42
+            "age" : 42,
+            "img" : "george.jpeg"
         },
         {
             "id": "2",
             "name": "Stella",
-            "age" : 31
+            "age" : 31,
+            "img" : "stella.jpeg"
         },
         {
             "id": "3",
             "name": "Elli",
-            "age" : 4
+            "age" : 4,
+            "img" : "eli.jpeg"
         },
         {
             "id": "4",
             "name": "Efi",
-            "age" : 7
+            "age" : 7,
+            "img" : "efi.jpeg"
         }
 
     ]

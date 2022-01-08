@@ -1,21 +1,50 @@
-<div style="font-family: 'Prompt', sans-serif">
-  <div>
+<div style="font-family: 'Prompt', sans-serif; display: grid">
+  <div
+    style="
+      display: grid;
+      grid-template-columns: 1fr;
+      grid-template-rows: 1fr;
+      grid-row-gap: 20px;
+      justify-items: center;
+      align-items: center;
+    "
+  >
     <div style="display: grid" *ngFor="let user of users">
       <div
         style="
+          width: 300px;
           display: flex;
+
           justify-content: space-around;
           align-items: center;
-          background-color: rgb(174, 174, 249);
-          padding: 1rem;
-          margin: 1rem;
+          background-color: rgb(228, 228, 228);
+          margin-top: 2rem;
           border-radius: 10px;
           box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
             rgba(60, 64, 67, 0.15) 0px 1px 3px 1px;
+          position: relative;
         "
       >
-        <h5 style="color: rgb(252, 252, 252)">{{ user.name }}</h5>
-        <h6 style="color: rgb(252, 252, 252)">{{ user.age }}</h6>
+        <img
+          style="
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+
+            position: absolute;
+            top: -30px;
+            left: 0;
+          "
+          [src]="'../assets/img/' + user.img"
+          alt="human portrait"
+        />
+        <h5 style="color: rgb(126, 126, 126); font-size: 1.2rem">
+          {{ user.name }}
+        </h5>
+        <h6 style="color: rgb(126, 126, 126); font-size: 1rem">
+          {{ user.age }}
+        </h6>
       </div>
     </div>
   </div>
