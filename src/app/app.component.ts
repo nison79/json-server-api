@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { UsersService } from './users-service.service';
+import { UserInterface } from './user';
 
 @Component({
   selector: 'app-root',
@@ -8,16 +10,18 @@ import { HttpClient } from '@angular/common/http';
 })
 export class AppComponent {
   title = 'json-server-api';
-  public users: any;
+  users: UserInterface[] = [];
 
-  constructor(private http: HttpClient) {}
+  constructor(private service: UsersService) {}
 
   ngOnInit() {
     console.log('ONINIT');
-    this.http.get('http://localhost:3000/users').subscribe((users) => {
-      console.log(users);
+    this.service.getUsers().subscribe((users: UserInterface[]) => (this.users = users));
+  }
 
-      this.users = users;
+  removeUser(id: any) {
+    this.service.removeUser(id).subscribe(() => {
+      this.users = this.users.filter((user: any) => user.id !== id);
     });
   }
 }
