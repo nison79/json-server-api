@@ -1,29 +1,28 @@
 {
-    "users":[
-        {
-            "id": "1",
-            "name": "George",
-            "age" : 42,
-            "img" : "george.jpeg"
-        },
-        {
-            "id": "2",
-            "name": "Stella",
-            "age" : 32,
-            "img" : "stella.jpeg"
-        },
-        {
-            "id": "3",
-            "name": "Elli",
-            "age" : 4,
-            "img" : "eli.jpeg"
-        },
-        {
-            "id": "4",
-            "name": "Efi",
-            "age" : 7,
-            "img" : "efi.jpeg"
-        }
-
-    ]
+  "users": [
+    {
+      "id": "2",
+      "name": "Stella",
+      "age": 32,
+      "img": "stella.jpeg"
+    },
+    {
+      "id": "3",
+      "name": "Elli",
+      "age": 4,
+      "img": "eli.jpeg"
+    },
+    {
+      "id": "4",
+      "name": "Efi",
+      "age": 7,
+      "img": "efi.jpeg"
+    },
+    {
+      "name": "George",
+      "age": "42",
+      "img": "george.jpeg",
+      "id": "rnFpk4f"
+    }
+  ]
 }

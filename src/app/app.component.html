@@ -45,7 +45,25 @@
         <h6 style="color: rgb(126, 126, 126); font-size: 1rem">
           {{ user.age }}
         </h6>
+        <button (click)="removeUser(user.id)">Delete User</button>
       </div>
     </div>
   </div>
+
+  <div style="font-family: 'Prompt', sans-serif" *ngIf="openAddUser">
+    <div>
+      <label>name</label>
+      <input  [(ngModel)]="name" />
+    </div>
+    <div>
+      <label>age</label>
+      <input [(ngModel)]="age" />
+    </div>
+    <div>
+      <label>img</label>
+      <input [(ngModel)]="img" />
+    </div>
+    <button (click)="addUser(name, age, img)">Add User</button>
+  </div>
 </div>
+<button (click)="onOpenAddUser()">Open Add User</button>

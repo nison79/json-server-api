@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
-import { map } from 'rxjs/operators';
+import { Observable, pipe } from 'rxjs';
+import { map, tap } from 'rxjs/operators';
 import { UserInterface } from './user';
 
 @Injectable()
@@ -25,10 +25,11 @@ export class UsersService {
     return this.http.delete(`http://localhost:3000/users/${id}`);
   }
 
-  addUser(name: string): Observable<UserInterface> {
+  addUser(name: string, age: number, img: string): Observable<UserInterface> {
     const user = {
       name,
-      age: 30,
+      age,
+      img,
     };
     return this.http.post<UserInterface>('http://localhost:3000/users', user);
   }
