@@ -1,6 +1,6 @@
 export interface UserInterface {
   id: string;
   name: string;
-  age: string;
+  age: number;
   img: string;
 }

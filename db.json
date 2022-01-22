@@ -1,12 +1,6 @@
 {
   "users": [
     {
-      "id": "2",
-      "name": "Stella",
-      "age": 32,
-      "img": "stella.jpeg"
-    },
-    {
       "id": "3",
       "name": "Elli",
       "age": 4,
@@ -23,6 +17,18 @@
       "age": "42",
       "img": "george.jpeg",
       "id": "rnFpk4f"
+    },
+    {
+      "name": "Stella",
+      "age": "32",
+      "img": "stella.jpeg",
+      "id": "oDb3imj"
+    },
+    {
+      "name": "Takis",
+      "age": "45",
+      "img": null,
+      "id": "ceDoeT6"
     }
   ]
 }

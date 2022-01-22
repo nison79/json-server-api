@@ -1,8 +1,7 @@
-import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { UsersService } from './users-service.service';
 import { UserInterface } from './user';
-import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
+import { animate } from 'motion';
 
 @Component({
   selector: 'app-root',
@@ -10,6 +9,7 @@ import { THIS_EXPR } from '@angular/compiler/src/output/output_ast';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+  @ViewChild('myElement') myElement: ElementRef | undefined;
   title = 'json-server-api';
   users: UserInterface[] = [];
   openAddUser!: boolean;
@@ -28,8 +28,10 @@ export class AppComponent {
   }
 
   removeUser(id: any) {
-    this.service.removeUser(id).subscribe(() => {
-      this.users = this.users.filter((user: any) => user.id !== id);
+    this.service.removeUser(id).subscribe((user) => {
+      if (this.users) {
+        this.users = this.users.filter((user: any) => user.id !== id);
+      }
     });
   }
 
@@ -44,4 +46,5 @@ export class AppComponent {
     // this.openAddUser !== this.openAddUser;
     console.log(this.openAddUser);
   }
+
 }

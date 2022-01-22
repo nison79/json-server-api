@@ -6,9 +6,10 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 import { UsersService } from './users-service.service';
+import { KidsComponent } from './kids/kids.component';
 
 @NgModule({
-  declarations: [AppComponent],
+  declarations: [AppComponent, KidsComponent],
   imports: [BrowserModule, HttpClientModule, CommonModule, FormsModule],
   providers: [UsersService],
   bootstrap: [AppComponent],

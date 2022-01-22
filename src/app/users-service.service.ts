@@ -14,7 +14,7 @@ export class UsersService {
         return users.map((user) => ({
           id: user.id,
           name: user.name,
-          age: `${user.age} years old`,
+          age: user.age,
           img: user.img,
         }));
       })
@@ -32,5 +32,13 @@ export class UsersService {
       img,
     };
     return this.http.post<UserInterface>('http://localhost:3000/users', user);
+  }
+
+  onlyKids(): Observable<{}> {
+    return this.http.get<UserInterface[]>('http://localhost:3000/users').pipe(
+      map((users: UserInterface[]) => {
+        return users.filter((user) => user.age < 12);
+      })
+    );
   }
 }
